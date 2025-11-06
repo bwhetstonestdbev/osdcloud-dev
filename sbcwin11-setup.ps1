@@ -19,7 +19,7 @@ Copy-Item -Path ".\osdcloud-dev\AutopilotConfigurationFile.json" -Destination "C
 Copy-Item -Path ".\osdcloud-dev\osdcloud.shh" -Destination "C:\ProgramData\OSDCloud\Config\Scripts\osdcloud.shh" -Force
 
 # Set the OSDCloud environment to the local path
-Set-OSDCloudWorkspace C:\CECWin11
+Set-OSDCloudWorkspace C:\SBCWin11
 
 # Initial setup for the OSDCloud environment
 Edit-OSDCloudWinPE -StartOSDCloudGUI
@@ -31,7 +31,8 @@ Edit-OSDCloudWinPE -Wallpaper ".\osdcloud-dev\windows-11.jpg"
 Edit-OSDCloudWinPE -CloudDriver *
 
 # Regenerate the WinPE environment with the new settings
-Edit-OSDCloudWinPE -StartURL 'https://gist.githubusercontent.com/caseydaviscec/2e0911cfd7da6b5919649df499370219/raw/StartOSD.ps1'
+Edit-OSDCloudWinPE -StartURL ''
 
 # Make new USB Drive
 powershell iex(irm usb.cec.network)
+
