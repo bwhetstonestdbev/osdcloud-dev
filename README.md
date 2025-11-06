@@ -22,10 +22,11 @@ Install-Module OSD -Force
 ```
 # Setup Cloud Workspaces
 
-This repository is for building the reference ISO for CEC Windows Imaging. Open VS Code/Terminal and **Run as Administrator**, this is needed for DISM to work correctly
+This repository is for building the reference ISO for SBC Windows Imaging. Open VS Code/Terminal and **Run as Administrator**, this is needed for DISM to work correctly
 
-1. ```cecwin11-setup.ps1``` is for Production, it creates a workspace at C:\CECWin11. The OSDCloud Template lives in C:\ProgramData\OSDCloud 
+1. ```sbcwin11-setup.ps1``` is for Production, it creates a workspace at C:\CECWin11. The OSDCloud Template lives in C:\ProgramData\OSDCloud 
 
-2. ```cecwin11dev-setup.ps1``` is for Dev, it creates a workspace at C:\CECWin11dev. The OSDCloud Template lives in C:\ProgramData\OSDCloud\Templates\dev
+2. ```sbcwin11dev-setup.ps1``` is for Dev, it creates a workspace at C:\CECWin11dev. The OSDCloud Template lives in C:\ProgramData\OSDCloud\Templates\dev
+
 
 3. When copying out the ISO file, always use the NoPrompt version
