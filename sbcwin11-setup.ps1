@@ -25,7 +25,7 @@ Set-OSDCloudWorkspace C:\SBCWin11
 Edit-OSDCloudWinPE -StartOSDCloudGUI
 
 # Set the wallpaper for the WinPE environment
-Edit-OSDCloudWinPE -Wallpaper ".\osdcloud-dev\windows-11.jpg"
+Edit-OSDCloudWinPE -Wallpaper "C:\workspace\OSDCloudDev\osdcloud-dev\windows-11.jpg"
 
 # Injects Cloud drivers into the WinPE environment
 Edit-OSDCloudWinPE -CloudDriver *
