@@ -31,7 +31,7 @@ Edit-OSDCloudWinPE -Wallpaper "C:\workspace\OSDCloudDev\osdcloud-dev\windows-11.
 Edit-OSDCloudWinPE -CloudDriver *
 
 # Regenerate the WinPE environment with the new settings
-Edit-OSDCloudWinPE -StartURL 'https://gist.githubusercontent.com/bwhetstonestdbev/ed0948a40a1546cbb276514fc046e32d/raw/272f095429e838784aaf7c9643ec81c88814c91e/StartOSD.ps1'
+Edit-OSDCloudWinPE -StartURL 'https://gist.githubusercontent.com/bwhetstonestdbev/ed0948a40a1546cbb276514fc046e32d/raw/StartOSD.ps1'
 
 # Make new USB Drive
 # powershell iex(irm usb.cec.network)
