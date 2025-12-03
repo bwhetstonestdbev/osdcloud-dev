@@ -16,11 +16,18 @@ New-OSDCloudTemplate -SetInputLocale en-us
 # Set the OSDCloud Template
 Set-OSDCloudTemplate -Name default
 
-#Create OSDCloudworkspace
-New-OSDCloudWorksapce -WorkspacePath 'C:\SBCWin11'
+#Check that Workspace path exists; if it does just set workspace to local path
 
-# Set the OSDCloud environment to the local path
-Set-OSDCloudWorkspace C:\SBCWin11
+if (Test-Path 'C:\SBCWin11')
+{ 
+  Set-OSDCloudWorkspace C:\SBCWin11
+}
+else
+{ 
+  New-OSDCloudWorkspace -WorkspacePath 'C:\SBCWin11'
+  Set-OSDCloudWorkspace C:\SBCWin11
+}
+
 
 # Initial setup for the OSDCloud environment
 Edit-OSDCloudWinPE -StartOSDCloudGUI
@@ -36,6 +43,7 @@ Edit-OSDCloudWinPE -StartURL 'https://gist.githubusercontent.com/bwhetstonestdbe
 
 # Make new USB Drive
 New-OSDCloudUSB -fromIsoFile 'C:\SBCWin11\OSDCloud_NoPrompt.iso'
+
 
 
 
