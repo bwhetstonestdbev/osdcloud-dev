@@ -1,3 +1,6 @@
+#Prompt user to have USB plugged in
+Read-Host 'Press enter to confirm USB drive plugged in to continue'
+
 # This script sets up the OSDCloud environment for local use with Windows 11.
 Install-Module -Name OSD -Force
 
@@ -13,10 +16,8 @@ New-OSDCloudTemplate -SetInputLocale en-us
 # Set the OSDCloud Template
 Set-OSDCloudTemplate -Name default
 
-# Copy Autopilot JSON file
-Copy-Item -Path ".\osdcloud-dev\AutopilotConfigurationFile.json" -Destination "C:\ProgramData\OSDCloud\Config\AutopilotJSON\AutopilotConfigurationFile.json" -Force
-# Copy osdcloud secret
-Copy-Item -Path ".\osdcloud-dev\osdcloud.shh" -Destination "C:\ProgramData\OSDCloud\Config\Scripts\osdcloud.shh" -Force
+#Create OSDCloudworkspace
+New-OSDCloudWorksapce -WorkspacePath 'C:\SBCWin11'
 
 # Set the OSDCloud environment to the local path
 Set-OSDCloudWorkspace C:\SBCWin11
@@ -34,6 +35,7 @@ Edit-OSDCloudWinPE -CloudDriver *
 Edit-OSDCloudWinPE -StartURL 'https://gist.githubusercontent.com/bwhetstonestdbev/ed0948a40a1546cbb276514fc046e32d/raw/StartOSD.ps1'
 
 # Make new USB Drive
-# powershell iex(irm usb.cec.network)
+New-OSDCloudUSB -fromIsoFile 'C:\SBCWin11\OSDCloud_NoPrompt.iso'
+
 
 
